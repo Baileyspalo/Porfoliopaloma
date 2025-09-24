@@ -54,20 +54,14 @@
       z-index: 1;
     }
 
-     body::before {
-      content: "";
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 3000px;  /* Ajusta el tamaño de la marca de agua */
-      height: 3000px; /* Ajusta el tamaño de la marca de agua */
-      background: url('images/watermark.png') no-repeat center center;
-      background-size: contain;
-      opacity: 0.1; /* Baja opacidad para un efecto suave */
-      transform: translate(-50%, -50%);
-      pointer-events: none; /* Para que no interfiera con clics u otros elementos */
-      z-index: -1; /* Asegura que la marca de agua esté detrás del contenido */
-    }
+  body {
+  background-image: url('images/watermark.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* Asegura que la imagen cubra toda la página */
+  background-attachment: fixed; /* Mantiene la imagen fija mientras haces scroll */
+  opacity: 0.03; /* Baja opacidad para que la marca de agua sea sutil */
+}
   </style>
 </head>
 <body>
