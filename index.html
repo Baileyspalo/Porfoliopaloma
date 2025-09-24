@@ -50,13 +50,30 @@
     @media (max-width:880px){.hero{grid-template-columns:1fr;}}
 
 
-  body {
-  background-image: url('images/watermark.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; /* Asegura que la imagen cubra toda la página */
-  background-attachment: fixed; /* Mantiene la imagen fija mientras haces scroll */
-  opacity: 0.03; /* Baja opacidad para que la marca de agua sea sutil */
+body {
+  position: relative;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed; /* Se queda fijo mientras haces scroll */
+  top: 0;
+  left: 0;
+  width: 100vw;  /* Asegura que ocupe todo el ancho de la ventana */
+  height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  background: url('images/watermark.png') no-repeat center center;
+  background-size: cover; /* Hace que la imagen se ajuste proporcionalmente */
+  opacity: 0.03; /* Solo afecta a la marca de agua */
+  pointer-events: none; /* Evita bloquear clics en elementos debajo */
+  z-index: 0; /* Mantiene la imagen detrás del contenido */
+}
+
+.container {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté por encima */
 }
   </style>
 </head>
