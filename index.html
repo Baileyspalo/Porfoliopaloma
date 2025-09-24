@@ -48,6 +48,21 @@
     .tag{background:rgba(255,255,255,0.6);padding:6px 8px;border-radius:999px;font-size:12px;color:#000000}
     footer{margin-top:40px;padding:20px;border-radius:12px;color:#000000}
     @media (max-width:880px){.hero{grid-template-columns:1fr;}}
+
+     body::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 400px;  /* Ajusta el tamaño de la marca de agua */
+      height: 400px; /* Ajusta el tamaño de la marca de agua */
+      background: url('images/watermark.png') no-repeat center center;
+      background-size: contain;
+      opacity: 0.1; /* Baja opacidad para un efecto suave */
+      transform: translate(-50%, -50%);
+      pointer-events: none; /* Para que no interfiera con clics u otros elementos */
+      z-index: -1; /* Asegura que la marca de agua esté detrás del contenido */
+    }
   </style>
 </head>
 <body>
