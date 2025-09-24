@@ -50,11 +50,14 @@
     @media (max-width:880px){.hero{grid-template-columns:1fr;}}
 
 
-body {
-  position: relative;
-  background: var(--bg);
-  margin: 0;
-  padding: 0;
+body::before {
+  animation: subtleMove 30s infinite linear;
+}
+
+@keyframes subtleMove {
+  0% { background-position: center; }
+  50% { background-position: center 10px; }
+  100% { background-position: center; }
 }
 
 body::before {
